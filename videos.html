@@ -12,7 +12,7 @@
   <meta name="description" content="Maruti Films by Hitesh Prajapati: cinematic wedding films, pre-wedding shoots, event coverage, ad films and music videos. Call +91 97233 24227." />
   <meta name="author" content="Hitesh Prajapati" />
 
-  <title>Maruti Films</title>
+  <title>Videos | Maruti Films</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
@@ -55,13 +55,13 @@
                     <li class="nav-item ">
                       <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="nav-link" href="about.html"> About</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="portfolio.html"> Portfolio </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                       <a class="nav-link" href="videos.html"> Videos </a>
                     </li>
                     <li class="nav-item">
@@ -80,52 +80,48 @@
       </div>
     </header>
     <!-- end header section -->
+
   </div>
 
-  <!-- about section -->
+  <!-- portfolio section -->
 
-  <section class="about_section layout_padding">
+  <section class="portfolio_section video_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
-          About Studio
+          Our Videos
         </h2>
+        <p>
+          Watch our wedding films and reels right here
+        </p>
       </div>
-      <div class="box">
-        <div class="img-box">
-          <img src="images/about-emblem.jpg" width="800" height="800" alt="Maruti Films emblem: Lord Hanuman in a golden sunburst">
-          <div class="about_img-bg">
-            <img src="images/about-img-bg.png" alt="">
-          </div>
+      <div class="portfolio_filter">
+        <button type="button" class="active" data-filter="all">All</button>
+        <button type="button" data-filter="wedding-films">Wedding</button>
+        <button type="button" data-filter="reels">Reels</button>
+      </div>
+      <div class="portfolio_category" id="wedding-films" data-category="wedding-films">
+        <div class="category_heading">
+          <h3>Wedding</h3>
+          <p>Full wedding films and highlights, told like a movie.</p>
         </div>
-        <div class="detail-box">
-          <p>
-            Maruti Films is a creative film and photography studio founded by Hitesh Prajapati. We believe every
-            celebration has a story, and our job is to tell it beautifully. From intimate pre-wedding shoots to grand
-            wedding films, corporate events and ad films, we bring cinematic storytelling, honest emotion and careful
-            editing to every frame.
-          </p>
-          <p>
-            Every project is led personally by Hitesh, from the first planning call to the final colour grade. That
-            means you always know who is behind the camera, and your film carries one consistent creative vision.
-          </p>
-          <p>
-            <strong>What we shoot:</strong> wedding films &amp; highlights, pre-wedding shoots, engagement and
-            family functions, birthdays &amp; events, corporate films, ad films and music videos.
-          </p>
-          <div>
-            <a href="contact.html">
-              Book a Shoot
-            </a>
-          </div>
+        <div class="video_grid video_grid_wide" data-csv="video/wedding.csv"></div>
+      </div>
+      <div class="portfolio_category" id="reels" data-category="reels">
+        <div class="category_heading">
+          <h3>Reels</h3>
+          <p>Short, vertical edits from our recent shoots.</p>
         </div>
+        <div class="video_grid video_grid_reels" data-csv="video/reels.csv"></div>
+      </div>
+      <div class="see_btn">
+        <a href="contact.html">
+          Book Your Shoot
+        </a>
       </div>
     </div>
-
   </section>
-
-  <!-- end about section -->
-
+  <!-- end video section -->
 
   <!-- info section -->
   <section class="info_section ">
@@ -171,6 +167,8 @@
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/videos.js"></script>
+  <script type="text/javascript" src="js/portfolio.js"></script>
 
 </body>
 
