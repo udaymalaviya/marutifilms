@@ -1,6 +1,19 @@
 $white: #ffffff;
-$primary1: #0fcfdc;
 $black:#000000;
+
+// Maruti Films palette (taken from the logo)
+$ink: #0b0805;
+$ink2: #120c06;
+$card: #140e07;
+$footer: #070503;
+$gold: #c9a227;
+$goldLight: #e0b84a;
+$saffron: #f26b1d;
+$saffronDark: #d9570f;
+$cream: #f6ecd6;
+$text: #d8cbb0;
+$muted: #a8987a;
+$primary1: $saffron;
 
 
 @mixin main-font {
@@ -32,8 +45,17 @@ $black:#000000;
 
 body {
   @include main-font;
-  color: #0c0c0c;
-  background-color: #ffffff;
+  color: $text;
+  background-color: $ink;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $cream;
+}
+
+::selection {
+  background-color: $gold;
+  color: $ink;
 }
 
 
@@ -67,10 +89,17 @@ body {
   align-items: center;
   text-align: center;
 
+  p {
+    color: $muted;
+  }
+
   h2 {
     position: relative;
-    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    color: $cream;
 
     span {
       position: relative;
@@ -96,7 +125,8 @@ body {
 .hero_area {
   height: 136vh;
   position: relative;
-  background-image: url(../images/hero-bg.png);
+  background-color: $ink;
+  background-image: radial-gradient(ellipse at 72% 38%, rgba($goldLight, .28) 0%, rgba($gold, .1) 30%, rgba($ink, 0) 60%), repeating-conic-gradient(from 0deg at 72% 38%, rgba($gold, .07) 0deg 4deg, rgba($ink, 0) 4deg 12deg);
   background-size: cover;
 }
 
@@ -104,7 +134,8 @@ body {
   .hero_area {
     height: auto;
     background-image: none;
-    background-color: #e1f3fd;
+    background-color: $ink2;
+    border-bottom: 1px solid rgba($gold, .35);
 
     &::after {
       display: none;
@@ -133,7 +164,7 @@ body {
       .nav-link {
         margin: 10px 30px;
         padding: 0;
-        color: $primary1;
+        color: $cream;
         text-align: center;
         position: relative;
         text-transform: uppercase;
@@ -146,7 +177,7 @@ body {
           top: 50%;
           left: -10px;
           transform: translateY(-50%);
-          background-color: $primary1;
+          background-color: $gold;
           border-radius: 100%;
         }
 
@@ -155,10 +186,10 @@ body {
       &.active,
       &:hover {
         .nav-link {
-          color: #2a2132;
+          color: $goldLight;
 
           &::before {
-            background-color: #2a2132;
+            background-color: $saffron;
           }
         }
       }
@@ -176,7 +207,7 @@ a:focus {
 
 a:hover,
 a:focus {
-  color: initial;
+  color: $goldLight;
 }
 
 .btn,
@@ -207,12 +238,16 @@ a:focus {
     width: 48px;
     height: 48px;
     margin-right: 10px;
+    border-radius: 100%;
+    box-shadow: 0 0 18px rgba($goldLight, .45);
   }
 
   span {
-    font-size: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
     font-weight: 700;
-    color: $primary1;
+    letter-spacing: 2px;
+    color: $cream;
     text-transform: uppercase;
   }
 }
@@ -246,7 +281,7 @@ a:focus {
   align-items: center;
   position: relative;
   z-index: 2;
-  color: #3b3a3a;
+  color: $text;
 
   .row {
     align-items: center;
@@ -264,7 +299,10 @@ a:focus {
     h1 {
       font-weight: bold;
       margin-bottom: 30px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      color: $cream;
     }
 
     .btn-box {
@@ -276,12 +314,12 @@ a:focus {
       }
 
       .btn-1 {
-        @include hero_btn($primary1, $white, 7px, 0px, 30px, darken($primary1, 5));
+        @include hero_btn($saffron, $white, 7px, 0px, 30px, $saffronDark);
         margin-right: 5px;
       }
 
       .btn-2 {
-        @include hero_btn($black, $white, 7px, 0px, 30px, lighten($black, 20));
+        @include hero_btn($gold, $ink, 7px, 0px, 30px, $goldLight);
       }
     }
 
@@ -291,6 +329,10 @@ a:focus {
   .img-box {
     img {
       width: 100%;
+      border-radius: 12px 0 0 12px;
+      border: 2px solid $gold;
+      border-right: none;
+      box-shadow: 0 0 40px rgba($goldLight, .25);
     }
   }
 
@@ -361,6 +403,14 @@ a:focus {
       width: 250px;
       margin: 50px 0;
 
+      > img {
+        position: relative;
+        z-index: 1;
+        border-radius: 16px;
+        border: 3px solid $gold;
+        box-shadow: 0 0 30px rgba($goldLight, .35);
+      }
+
       .about_img-bg {
         position: absolute;
         top: 50%;
@@ -390,9 +440,13 @@ a:focus {
       text-align: center;
 
       a {
-        @include hero_btn($black, $white, 12px, 60px, 40px, lighten($black, 20));
+        @include hero_btn($gold, $ink, 12px, 60px, 40px, $goldLight);
         text-transform: uppercase;
         margin-top: 35px;
+
+        &:hover {
+          color: $ink;
+        }
       }
     }
   }
@@ -402,7 +456,7 @@ a:focus {
 
 // portfolio section
 .portfolio_section {
-  background-color: #f8ffff;
+  background-color: $ink2;
 
   .portfolio_container {
     display: flex;
@@ -451,7 +505,7 @@ a:focus {
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba($color: $primary1, $alpha: .8);
+        background-color: rgba($color: $saffron, $alpha: .8);
         z-index: 0;
       }
 
@@ -490,9 +544,13 @@ a:focus {
     justify-content: center;
 
     a {
-      @include hero_btn($black, $white, 12px, 60px, 40px, lighten($black, 20));
+      @include hero_btn($gold, $ink, 12px, 60px, 40px, $goldLight);
       text-transform: uppercase;
       margin-top: 35px;
+
+      &:hover {
+        color: $ink;
+      }
     }
   }
 }
@@ -525,7 +583,8 @@ a:focus {
         }
       }
 
-      border: 1px solid $primary1;
+      border: 1px solid rgba($gold, .6);
+      background-color: $card;
     }
 
     .detail-box {
@@ -534,6 +593,7 @@ a:focus {
 
       h2 {
         font-weight: bold;
+        color: $goldLight;
       }
 
       h6 {
@@ -574,11 +634,11 @@ a:focus {
       background-repeat: no-repeat;
       background-size: 15px;
       background-position: center;
-      background-color: $primary1;
+      background-color: $saffron;
       margin: 0 5px;
 
       &:hover {
-        background-color: $black;
+        background-color: $gold;
       }
     }
 
@@ -595,7 +655,8 @@ a:focus {
 
   .detail-box {
     padding: 20px;
-    border: 1px solid $primary1;
+    border: 1px solid rgba($gold, .6);
+    background-color: $card;
     margin: 0 25px;
 
     h4 {
@@ -608,7 +669,7 @@ a:focus {
 
 /* contact section */
 .contact_section {
-  background-image: url(../images/contact-bg.png);
+  background-image: radial-gradient(ellipse at 15% 100%, rgba($gold, .18) 0%, rgba($ink, 0) 55%);
   background-repeat: no-repeat;
   background-position: left bottom;
   padding-bottom: 250px;
@@ -642,14 +703,18 @@ a:focus {
     input {
       border: none;
       outline: none;
-      border-bottom: 1px solid $black;
-      color: $black;
+      border-bottom: 1px solid rgba($gold, .6);
+      color: $cream;
       width: 100%;
       margin: 15px 0;
       background-color: transparent;
 
       &::placeholder {
-        color: $black;
+        color: $muted;
+      }
+
+      &:focus {
+        border-bottom-color: $goldLight;
       }
 
       &.message_input {
@@ -658,7 +723,7 @@ a:focus {
     }
 
     button {
-      @include hero_btn($primary1, $white, 12px, 50px, 0, darken($primary1, 5));
+      @include hero_btn($saffron, $white, 12px, 50px, 0, $saffronDark);
       margin-top: 35px;
       border: none;
     }
@@ -671,8 +736,9 @@ a:focus {
 
 // info section
 .info_section {
-  background-color: #211d25;
-  color: $white;
+  background-color: $footer;
+  border-top: 1px solid rgba($gold, .35);
+  color: $text;
   @include secondary-font();
 
   .info_container {
@@ -710,7 +776,7 @@ a:focus {
 /* footer section*/
 
 .footer_section {
-  background-color: #211d25;
+  background-color: $footer;
   display: flex;
   justify-content: center;
   position: relative;
@@ -718,7 +784,7 @@ a:focus {
 }
 
 .footer_section p {
-  color: $white;
+  color: $muted;
   margin: 0 auto;
   text-align: center;
   padding: 20px 0;
@@ -727,7 +793,7 @@ a:focus {
 
 .footer_section {
   a {
-    color: $white;
+    color: $goldLight;
   }
 }
 
