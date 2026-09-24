@@ -46,10 +46,11 @@
 
   .about_section .box .img-box {
     width: 40%;
+    margin: 90px 0 70px;
   }
 
-  .portfolio_section .portfolio_container {
-    flex-direction: column;
+  .portfolio_section .portfolio_gallery {
+    column-count: 2;
   }
 
   .contact_section .bg-img1 {
@@ -94,8 +95,9 @@
     font-size: 2rem;
   }
 
-  .portfolio_section .portfolio_container .box-2-btm {
-    flex-direction: column;
+  .portfolio_section .portfolio_gallery,
+  .portfolio_section .portfolio_gallery.gallery_small {
+    column-count: 1;
   }
 }
 
