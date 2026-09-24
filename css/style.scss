@@ -697,6 +697,49 @@ a:focus {
     }
   }
 
+  .contact_details {
+    margin-top: 30px;
+    text-align: center;
+
+    .contact_owner {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $cream;
+      margin-bottom: 15px;
+
+      span {
+        display: block;
+        @include main-font;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+        color: $muted;
+      }
+    }
+
+    .contact_links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 25px;
+        border: 1px solid $gold;
+        border-radius: 30px;
+        color: $goldLight;
+
+        &:hover {
+          background-color: $gold;
+          color: $ink;
+        }
+      }
+    }
+  }
+
   .contact_form-container {
     margin-top: 45px;
 
@@ -744,6 +787,17 @@ a:focus {
   .info_container {
     width: 75%;
     margin: 0 auto;
+  }
+
+  .info_contact {
+    margin: 0 0 20px 0;
+    padding-top: 30px;
+    text-align: center;
+    color: $text;
+
+    a {
+      color: $goldLight;
+    }
   }
 
   .info_social {

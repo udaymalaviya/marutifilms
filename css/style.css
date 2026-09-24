@@ -729,6 +729,54 @@ a:focus {
   margin-top: 45px;
 }
 
+.contact_section .contact_details {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contact_section .contact_details .contact_owner {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #f6ecd6;
+  margin-bottom: 15px;
+}
+
+.contact_section .contact_details .contact_owner span {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #a8987a;
+}
+
+.contact_section .contact_details .contact_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact_section .contact_details .contact_links a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 25px;
+  border: 1px solid #c9a227;
+  border-radius: 30px;
+  color: #e0b84a;
+}
+
+.contact_section .contact_details .contact_links a:hover {
+  background-color: #c9a227;
+  color: #0b0805;
+}
+
 .contact_section .contact_form-container input {
   border: none;
   outline: none;
@@ -788,6 +836,17 @@ a:focus {
 .info_section .info_container {
   width: 75%;
   margin: 0 auto;
+}
+
+.info_section .info_contact {
+  margin: 0 0 20px 0;
+  padding-top: 30px;
+  text-align: center;
+  color: #d8cbb0;
+}
+
+.info_section .info_contact a {
+  color: #e0b84a;
 }
 
 .info_section .info_social {
