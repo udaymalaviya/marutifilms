@@ -5,6 +5,11 @@
 }
 
 @media (max-width: 992px) {
+  .header_section .navbar-collapse {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
   .navbar-nav {
     align-items: center;
   }
@@ -45,8 +50,8 @@
   }
 
   .about_section .box .img-box {
-    width: 40%;
-    margin: 90px 0 70px;
+    width: 80%;
+    margin: 40px 0 30px;
   }
 
   .portfolio_section .portfolio_gallery {
@@ -60,17 +65,6 @@
     right: 0px;
   }
 
-  .client_section .col-md-3 {
-    justify-content: center;
-  }
-
-  .client_section .detail-box {
-    margin-bottom: 35px;
-  }
-
-  .client_section .row {
-    flex-wrap: wrap-reverse;
-  }
 }
 
 @media (max-width: 576px) {
@@ -82,9 +76,15 @@
   }
 
   .client_section .detail-box {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0 10px;
+    padding: 20px 15px;
+  }
 
+  .client_section .carousel-control-prev,
+  .client_section .carousel-control-next {
+    width: 38px;
+    height: 38px;
+    background-size: 12px;
   }
 }
 

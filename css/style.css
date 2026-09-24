@@ -1,3 +1,7 @@
+html {
+  scroll-padding-top: 110px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #d8cbb0;
@@ -91,6 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 /*header section*/
 .hero_area {
   height: 136vh;
+  padding-top: 98px;
   position: relative;
   background-color: #0b0805;
   background-image: radial-gradient(ellipse at 72% 38%, rgba(224, 184, 74, 0.28) 0%, rgba(201, 162, 39, 0.1) 30%, rgba(11, 8, 5, 0) 60%), repeating-conic-gradient(from 0deg at 72% 38%, rgba(201, 162, 39, 0.07) 0deg 4deg, rgba(11, 8, 5, 0) 4deg 12deg);
@@ -106,6 +111,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .sub_page .hero_area::after {
   display: none;
+}
+
+.header_section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-bottom: 12px;
+  background-color: rgba(11, 8, 5, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
 }
 
 .header_section .container-fluid {
@@ -299,6 +317,7 @@ a:focus {
 
 .slider_section .img-box img {
   width: 100%;
+  height: auto;
   border-radius: 12px 0 0 12px;
   border: 2px solid #c9a227;
   border-right: none;
@@ -370,7 +389,7 @@ a:focus {
   height: auto;
   position: relative;
   z-index: 1;
-  border-radius: 16px;
+  border-radius: 100%;
   border: 3px solid #c9a227;
   -webkit-box-shadow: 0 0 30px rgba(224, 184, 74, 0.35);
           box-shadow: 0 0 30px rgba(224, 184, 74, 0.35);
@@ -378,15 +397,18 @@ a:focus {
 
 .about_section .box .img-box {
   position: relative;
-  width: 250px;
-  margin: 140px 0 110px;
+  width: 490px;
+  max-width: 100%;
+  margin: 60px 0 40px;
 }
 
 .about_section .box .img-box .about_img-bg {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200%;
+  z-index: 2;
+  width: 102%;
+  pointer-events: none;
   -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
           transform: translate(-50%, -50%) rotate(0deg) scale(1);
   -webkit-animation: rotateAnimation 3s infinite;
@@ -685,36 +707,28 @@ a:focus {
   font-size: 18px;
 }
 
-.client_section .row {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.client_section .col-md-3 {
+.client_section .testimonial_row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.client_section .btn_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
-.client_section .btn_container .carousel-control-prev,
-.client_section .btn_container .carousel-control-next {
+.client_section .carousel-inner {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.client_section .carousel-control-prev,
+.client_section .carousel-control-next {
   position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   width: 50px;
   height: 50px;
   border: none;
@@ -724,27 +738,27 @@ a:focus {
   background-size: 15px;
   background-position: center;
   background-color: #f26b1d;
-  margin: 0 5px;
 }
 
-.client_section .btn_container .carousel-control-prev:hover,
-.client_section .btn_container .carousel-control-next:hover {
+.client_section .carousel-control-prev:hover,
+.client_section .carousel-control-next:hover {
   background-color: #c9a227;
 }
 
-.client_section .btn_container .carousel-control-prev {
+.client_section .carousel-control-prev {
   background-image: url(../images/prev-white.png);
 }
 
-.client_section .btn_container .carousel-control-next {
+.client_section .carousel-control-next {
   background-image: url(../images/next-white.png);
 }
 
 .client_section .detail-box {
-  padding: 20px;
+  padding: 25px 30px;
   border: 1px solid rgba(201, 162, 39, 0.6);
   background-color: #140e07;
   margin: 0 25px;
+  text-align: center;
 }
 
 .client_section .detail-box h4 {

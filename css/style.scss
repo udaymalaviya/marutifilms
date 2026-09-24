@@ -43,6 +43,10 @@ $primary1: $saffron;
 
 
 
+html {
+  scroll-padding-top: 110px;
+}
+
 body {
   @include main-font;
   color: $text;
@@ -124,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 /*header section*/
 .hero_area {
   height: 136vh;
+  padding-top: 98px;
   position: relative;
   background-color: $ink;
   background-image: radial-gradient(ellipse at 72% 38%, rgba($goldLight, .28) 0%, rgba($gold, .1) 30%, rgba($ink, 0) 60%), repeating-conic-gradient(from 0deg at 72% 38%, rgba($gold, .07) 0deg 4deg, rgba($ink, 0) 4deg 12deg);
@@ -145,6 +150,16 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .header_section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-bottom: 12px;
+  background-color: rgba($ink, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba($gold, .35);
+
   .container-fluid {
     padding-right: 25px;
     padding-left: 25px;
@@ -329,6 +344,7 @@ a:focus {
   .img-box {
     img {
       width: 100%;
+      height: auto;
       border-radius: 12px 0 0 12px;
       border: 2px solid $gold;
       border-right: none;
@@ -400,14 +416,15 @@ a:focus {
 
     .img-box {
       position: relative;
-      width: 250px;
-      margin: 140px 0 110px;
+      width: 490px;
+      max-width: 100%;
+      margin: 60px 0 40px;
 
       > img {
         height: auto;
         position: relative;
         z-index: 1;
-        border-radius: 16px;
+        border-radius: 100%;
         border: 3px solid $gold;
         box-shadow: 0 0 30px rgba($goldLight, .35);
       }
@@ -416,7 +433,9 @@ a:focus {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 200%;
+        z-index: 2;
+        width: 102%;
+        pointer-events: none;
         transform: translate(-50%, -50%) rotate(0deg) scale(1);
         animation: rotateAnimation 3s infinite;
       }
@@ -671,55 +690,50 @@ a:focus {
 // client section
 
 .client_section {
-  .row {
+  .testimonial_row {
+    display: flex;
     align-items: center;
+    max-width: 950px;
+    margin: 0 auto;
   }
 
-  .col-md-3 {
-    display: flex;
-    justify-content: flex-end;
+  .carousel-inner {
+    flex: 1;
   }
 
-  .btn_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: relative;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 100%;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+    background-color: $saffron;
 
-    .carousel-control-prev,
-    .carousel-control-next {
-      position: relative;
-      width: 50px;
-      height: 50px;
-      border: none;
-      border-radius: 100%;
-      opacity: 1;
-      background-repeat: no-repeat;
-      background-size: 15px;
-      background-position: center;
-      background-color: $saffron;
-      margin: 0 5px;
-
-      &:hover {
-        background-color: $gold;
-      }
+    &:hover {
+      background-color: $gold;
     }
+  }
 
-    .carousel-control-prev {
-      background-image: url(../images/prev-white.png);
+  .carousel-control-prev {
+    background-image: url(../images/prev-white.png);
+  }
 
-    }
-
-    .carousel-control-next {
-      background-image: url(../images/next-white.png);
-
-    }
+  .carousel-control-next {
+    background-image: url(../images/next-white.png);
   }
 
   .detail-box {
-    padding: 20px;
+    padding: 25px 30px;
     border: 1px solid rgba($gold, .6);
     background-color: $card;
     margin: 0 25px;
+    text-align: center;
 
     h4 {
       text-transform: uppercase;
