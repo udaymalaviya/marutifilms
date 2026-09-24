@@ -163,8 +163,9 @@ a:focus {
 }
 
 .navbar-brand img {
-  width: 30px;
-  margin-right: 5px;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
 }
 
 .navbar-brand span {
